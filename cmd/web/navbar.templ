@@ -1,0 +1,14 @@
+package web
+
+templ Navbar() {
+	<div class="container flex flex-col pb-12">
+		<ul class="flex flex-row justify-between items-center">
+			@navItem("/", "Home")
+			@navItem("/faq", "FAQ")
+		</ul>
+	</div>
+}
+
+templ navItem(href string, text string) {
+	<li class="text-slate-900 hover:underline text-xl"><a href={ href }>{ text }</a></li>
+}

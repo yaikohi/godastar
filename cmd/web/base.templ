@@ -1,0 +1,19 @@
+package web
+
+templ Base() {
+	<!DOCTYPE html>
+	<html lang="en" class="h-screen">
+		<head>
+			<meta charset="utf-8"/>
+			<meta name="viewport" content="width=device-width,initial-scale=1"/>
+			<title>godastar template</title>
+			<link href="assets/css/output.css" rel="stylesheet"/>
+			<script type="module" src="assets/js/datastar.js"></script>
+		</head>
+		<body class="absolute -z-50 h-screen w-screen bg-gradient-to-t from-slate-50 via-green-200 to-slate-50">
+			<main class="max-w-xl mx-auto p-4">
+				{ children... }
+			</main>
+		</body>
+	</html>
+}

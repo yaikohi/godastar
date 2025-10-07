@@ -1,0 +1,29 @@
+package web
+
+templ Homepage() {
+	@Base() {
+		@Navbar()
+		<div class="container flex flex-col p-4">
+			<div class="container">
+				<h1 class="text-3xl font-bold">Welcome to this template</h1>
+				<p class="text-lg font-light">This is dog</p>
+				@Image("assets/img/cachorro-alien.gif", "little cachorro")
+				@Image("assets/img/green-alien-joshua.jpg", "green alien joshua")
+			</div>
+		</div>
+		@Footer("owo")
+	}
+}
+
+templ DatastarExample() {
+	<div class="container">
+		<h2>Datastar Experiments</h2>
+		<button
+			class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+			data-on-click="@get('/hal')"
+		>
+			Open the pod bay doors, HAL.
+		</button>
+		<div id="hal"></div>
+	</div>
+}

@@ -1,0 +1,36 @@
+package web
+
+type QAProps struct {
+	question string
+	answer   string
+}
+
+templ Faq() {
+	@Base() {
+		@Navbar()
+		<div class="container flex flex-col p-4">
+			@qa(QAProps{
+				question: "why a template?",
+				answer:   "it can be useful for quickly starting up a project lol"})
+		</div>
+	}
+}
+
+templ qa(qa QAProps) {
+	<div class="flex flex-col py-4">
+		@question(qa.question)
+		@answer(qa.answer)
+	</div>
+}
+
+templ question(question string) {
+	<p class="italic font-light">
+		{ question }
+	</p>
+}
+
+templ answer(answer string) {
+	<p class="mt-2">
+		{ answer }
+	</p>
+}

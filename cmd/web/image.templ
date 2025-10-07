@@ -1,0 +1,11 @@
+package web
+
+templ Image(imgSrc string, alt string) {
+	<div class="container flex flex-col pb-12">
+		<img
+			class="md:animate-pulse md:hover:animate-none rounded-full max-w-[400px] md:max-h-[100px] hover:max-h-[400px]"
+			src={ imgSrc }
+			alt={ alt }
+		/>
+	</div>
+}
