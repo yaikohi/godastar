@@ -1,0 +1,22 @@
+[phases]
+
+[phases.setup]
+nixPkgs = ["go", "tailwindcss"]
+
+[phases.install]
+cmds = [
+  # Let Go download project dependencies
+  "go mod download",
+  # Let Go install the correct version of the templ CLI
+  "go install github.com/a-h/templ/cmd/templ@latest"
+]
+
+[phases.build]
+cmds = [
+    "templ generate",
+    "tailwindcss -i cmd/web/styles/input.css -o cmd/web/assets/css/output.css",
+    "go build -o main cmd/api/main.go"
+]
+
+[start]
+cmd = "./main"
